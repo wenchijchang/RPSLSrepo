@@ -1,4 +1,6 @@
 from player import Player
+from time import sleep
+gestures = ["Rock", "Paper", "scissors", "Lizard", "Spock"]
 
 class Human(Player):
     
