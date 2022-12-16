@@ -85,21 +85,24 @@ class Game:
             print("\n")
             print("\n")
         
-    # def winner(self): 
-    #     if self.player_one.score > self.player_two.score:
-    #         print(f"{self.player_one.name} wins best of 3!")
-    #     else:
-    #         print(f"{self.player_two} wins best of 3!")
-    #     user_input = input("Do you want to play again? Please enter Y/N: ")
-    #     if user_input == "Y":
-    #         self.run_game()
-    #     else:
-    #         print("Thank you for playing. Hope you had fun!")
+    def winner(self): 
+        if self.player_one.score == self.player_two.score:
+            print("It's a draw!")
+        elif self.player_one.score > self.player_two.score:
+            print(f"{self.player_one.name} wins best of 3. {self.player_one.name} is the winner!")
+        else:
+            print(f"{self.player_two} wins best of 3. {self.player_two.name} is the winner!")
+        user_input = input("Do you want to play again? Please enter y/n: ")
+        if user_input == "y":
+            self.run_game()
+        else:
+            print("Thank you for playing.")
 
 
     def run_game(self):
         # self.greeting()
         # self.rules()
         self.number_of_player()
-        self.gesture_options()
+        # self.gesture_options()
         self.play_game()
+        self.winner()
