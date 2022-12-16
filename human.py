@@ -18,3 +18,4 @@ class Human(Player):
             else:
                 print("Invalid entry, please try again")
                 valid_gesture = False
+            return self.choose_gesture

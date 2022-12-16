@@ -42,9 +42,12 @@ class Game:
         user_input = int(input("How many players? Please enter 1 or 2: "))
         if user_input == 2:
             self.player_one = Human()
+            self.player_one.name = "Player one"
             self.player_two = Human()
+            self.player_two.name = "Player two"
         elif user_input == 1:
             self.player_one = Human()
+            self.player_one.name = "Player one"
             self.player_two = AI()
         else:
             print("Invalid entry, please try again")
@@ -79,6 +82,8 @@ class Game:
                 print(f"{self.player_two.name} wins!")
                 self.player_two.score += 1
             Round += 1
+        
+    def winner(self): 
         if self.player_one.score > self.player_two.score:
             print(f"{self.player_one.name} wins best of 3!")
         else:

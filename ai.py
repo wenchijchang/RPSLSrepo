@@ -14,6 +14,6 @@ class AI(Player):
         self.choose_gesture = random.choice(gestures)
         sleep(1)
         print(f"{self.name} has picked {self.choose_gesture}")
-
+        return self.choose_gesture
 
 
