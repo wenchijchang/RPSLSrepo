@@ -71,28 +71,35 @@ class Game:
     def play_game(self):
         Round = 1
         while Round < 4:
-            self.player_one.gesture = self.player_one.choose_gesture()
-            self.player_two.gesture = self.player_two.choose_gesture()
-            if self.player_one.gesture == self.player_two.gesture:
-                print("Tie")
-            elif (self.player_one.gesture == "Rock" and self.player_two.gesture == "Scissors" or "Lizard") or (self.player_one.gesture == "Paper" and self.player_two.gesture == "Rock" or "Spock") or (self.player_one.gesture == "Scissors" and self.player_two.gesture == "Lizard" or "Paper") or (self.player_one.gesture == "Lizard" and self.player_two.gesture == "Paper" or "Spock") or (self.player_one.gesture == "Spock" and self.player_two.gesture == "Scissors" or "Rock"):
+            self.player_one.user_input = self.player_one.choose_gesture()
+            self.player_two.user_input = self.player_two.choose_gesture()
+            if self.player_one.user_input == self.player_two.user_input:
+                print("It's a draw!")
+            elif self.player_one.user_input == "Rock" and (self.player_two.user_input == "Scissors" and "Lizard") or self.player_one.user_input == "Paper" and (self.player_two.user_input == "Rock" and "Spock") or self.player_one.user_input == "Scissors" and (self.player_two.user_input == "Lizard" and "Paper") or self.player_one.user_input == "Lizard" and (self.player_two.user_input == "Paper" and "Spock") or self.player_one.user_input == "Spock" and (self.player_two.user_input == "Scissors" and "Rock"):
                 print(f"{self.player_one.name} wins!")
                 self.player_one.score += 1
-            elif (self.player_two.gesture == "Rock" and self.player_one.gesture == "Scissors" or "Lizard") or (self.player_two.gesture == "Paper" and self.player_one.gesture == "Rock" or "Spock") or (self.player_two.gesture == "Scissors" and self.player_one.gesture == "Lizard" or "Paper") or (self.player_two.gesture == "Lizard" and self.player_one.gesture == "Paper" or "Spock") or (self.player_two.gesture == "Spock" and self.player_one.gesture == "Scissors" or "Rock"):
+            elif self.player_two.user_input == "Rock" and (self.player_one.user_input == "Scissors" and "Lizard") or self.player_two.user_input == "Paper" and (self.player_one.user_input == "Rock" and "Spock") or self.player_two.user_input == "Scissors" and (self.player_one.user_input == "Lizard" and "Paper") or self.player_two.user_input == "Lizard" and (self.player_one.user_input == "Paper" and "Spock") or self.player_two.user_input == "Spock" and (self.player_one.user_input == "Scissors" and "Rock"):
                 print(f"{self.player_two.name} wins!")
                 self.player_two.score += 1
             Round += 1
+            print("\n")
+            print("\n")
         
-    def winner(self): 
-        if self.player_one.score > self.player_two.score:
-            print(f"{self.player_one.name} wins best of 3!")
-        else:
-            print(f"{self.player_two} wins best of 3!")
+    # def winner(self): 
+    #     if self.player_one.score > self.player_two.score:
+    #         print(f"{self.player_one.name} wins best of 3!")
+    #     else:
+    #         print(f"{self.player_two} wins best of 3!")
+    #     user_input = input("Do you want to play again? Please enter Y/N: ")
+    #     if user_input == "Y":
+    #         self.run_game()
+    #     else:
+    #         print("Thank you for playing. Hope you had fun!")
 
 
     def run_game(self):
-        self.greeting()
-        self.rules()
+        # self.greeting()
+        # self.rules()
         self.number_of_player()
         self.gesture_options()
         self.play_game()

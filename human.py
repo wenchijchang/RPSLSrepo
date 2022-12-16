@@ -11,11 +11,12 @@ class Human(Player):
     def choose_gesture(self):
         valid_gesture = False
         while valid_gesture == False:
-            user_input = int(input("Please enter your gesture: "))
-            if user_input == 0 or user_input == 1 or user_input == 2 or user_input == 3 or user_input == 4:
-                print(self.name + " " + "has picked" + " " + gestures[int(user_input)])
+            self.user_input = int(input("Please enter your gesture: "))
+            if self.user_input == 0 or self.user_input == 1 or self.user_input == 2 or self.user_input == 3 or self.user_input == 4:
+                sleep(1)
+                print(self.name + " " + "has picked" + " " + gestures[int(self.user_input)])
                 valid_gesture = True
             else:
                 print("Invalid entry, please try again")
                 valid_gesture = False
-            return self.choose_gesture
+            return str(gestures[int(self.user_input)])
