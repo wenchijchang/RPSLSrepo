@@ -10,6 +10,7 @@ class Game:
         self.player_two = " "
     
     def greeting(self):
+        print("\n")
         print("Welcome to Rock Paper Scissors Lizard Spock\n")
         sleep(1)
         print("Each match will be best of three games.\nPlease use the number keys to enter your selection.\n")
@@ -91,7 +92,7 @@ class Game:
         elif self.player_one.score > self.player_two.score:
             print(f"{self.player_one.name} wins best of 3. {self.player_one.name} is the winner!")
         else:
-            print(f"{self.player_two} wins best of 3. {self.player_two.name} is the winner!")
+            print(f"{self.player_two.name} wins best of 3. {self.player_two.name} is the winner!")
         user_input = input("Do you want to play again? Please enter y/n: ")
         if user_input == "y":
             self.run_game()
@@ -100,9 +101,9 @@ class Game:
 
 
     def run_game(self):
-        # self.greeting()
-        # self.rules()
+        self.greeting()
+        self.rules()
         self.number_of_player()
-        # self.gesture_options()
+        self.gesture_options()
         self.play_game()
         self.winner()

@@ -1,7 +1,7 @@
 import random
 from player import Player
 from time import sleep
-gestures = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+# gestures = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 
 class AI(Player):
 
@@ -11,7 +11,7 @@ class AI(Player):
 
 
     def choose_gesture(self):
-        self.user_input = random.choice(gestures)
+        self.user_input = random.choice(self.gestures)
         sleep(1)
         print(f"{self.name} has picked {self.user_input}")
         return self.user_input

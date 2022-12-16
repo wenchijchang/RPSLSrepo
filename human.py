@@ -1,6 +1,6 @@
 from player import Player
 from time import sleep
-gestures = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+# gestures = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 
 class Human(Player):
     
@@ -14,9 +14,9 @@ class Human(Player):
             self.user_input = int(input("Please enter your gesture: "))
             if self.user_input == 0 or self.user_input == 1 or self.user_input == 2 or self.user_input == 3 or self.user_input == 4:
                 sleep(1)
-                print(self.name + " " + "has picked" + " " + gestures[int(self.user_input)])
+                print(self.name + " " + "has picked" + " " + self.gestures[int(self.user_input)])
                 valid_gesture = True
             else:
                 print("Invalid entry, please try again")
-                valid_gesture = False
-            return str(gestures[int(self.user_input)])
+                self.choose_gesture()
+            return str(self.gestures[int(self.user_input)])
