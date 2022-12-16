@@ -1,7 +1,7 @@
 import random
 from player import Player
 from time import sleep
-gestures = ["Rock", "Paper", "scissors", "Lizard", "Spock"]
+gestures = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 
 class AI(Player):
 
