@@ -79,7 +79,10 @@ class Game:
                 print(f"{self.player_two.name} wins!")
                 self.player_two.score += 1
             Round += 1
-
+        if self.player_one.score > self.player_two.score:
+            print(f"{self.player_one.name} wins best of 3!")
+        else:
+            print(f"{self.player_two} wins best of 3!")
 
 
     def run_game(self):
