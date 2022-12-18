@@ -93,17 +93,25 @@ class Game:
             print(f"{self.player_one.name} wins best of 3. {self.player_one.name} is the winner!")
         else:
             print(f"{self.player_two.name} wins best of 3. {self.player_two.name} is the winner!")
-        user_input = input("Do you want to play again? Please enter y/n: ")
-        if user_input == "y":
-            self.run_game()
-        else:
-            print("Thank you for playing.")
+        valid_input = False
+        while valid_input == False:
+            user_input = input("Do you want to play again? Please enter y/n: ")
+            if user_input == "y":
+                valid_input = True
+                self.run_game()
+            elif user_input == "n":
+                valid_input = True
+                print("Thank you for playing.")
+            else:
+                print("Invalid entry, please try again")
+
+
 
 
     def run_game(self):
-        # self.greeting()
-        # self.rules()
+        self.greeting()
+        self.rules()
         self.number_of_player()
-        # self.gesture_options()
+        self.gesture_options()
         self.play_game()
         self.winner()
